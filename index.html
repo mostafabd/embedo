@@ -148,6 +148,24 @@
     pre.line-numbers.language-javascript {
       background: rgba(23, 23, 23, 0.65);
     }
+
+    footer {
+      position: relative;
+      text-align: center;
+    }
+
+    footer p {
+      text-align: center;
+      margin-bottom: 100px;
+      height: 40px;
+      line-height: 40px;
+      font-weight: 600;
+    }
+
+    footer p > a {
+      position: relative;
+      top: 5px;
+    }
   </style>
 </head>
 
@@ -178,7 +196,11 @@
     <div class="code-editor">
       <pre class="line-numbers">
         <code class="language-javascript">
-      // After initialzing embedo script
+      /**
+       * Eithe import the script source
+       * OR npm install embedo
+       * OR bower install embedo
+       */
       var embedo = new Embedo({
         facebook: true,
         twitter: true,
@@ -213,6 +235,9 @@
       </pre>
     </div>
   </section>
+  <footer style="text-align: center;  margin-bottom: 100px;">
+    <p>Also can be found on <a href="https://badge.fury.io/js/embedo"><img src="https://badge.fury.io/js/embedo.svg" alt="npm version" height="18"></a></p>
+  </footer>
   </main>
   <!--[if lt IE 7]>
   <script src="https://seancoyne.github.io/ie7-js/lib/IE7.js"></script>
