@@ -508,6 +508,7 @@
   <!-- Here your application or script is initialized -->
   <script>
     window.onload = function () {
+      
       var embedo = new Embedo({
         facebook: true,
         twitter: true,
@@ -518,13 +519,22 @@
       document.getElementById('test-width').addEventListener('input', build);
       document.getElementById('test-height').addEventListener('input', build);
 
+      var timer;
+      var timeout = 1000;
+
       function build(event) {
+        if (timer) {
+          clearTimeout(timer);
+        }
+        
         document.getElementById('test-container').innerHTML = '';
-        embedo.load(document.getElementById('test-container'),
+        timer = setTimeout(function(){
+          embedo.load(document.getElementById('test-container'),
           document.getElementById('test-url').value, {
             width: document.getElementById('test-width').value,
             height: document.getElementById('test-height').value
           });
+        }, timeout);
       }
     };
   </script>
