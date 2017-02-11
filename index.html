@@ -140,6 +140,10 @@
       text-align: left;
     }
 
+    .fb-post.fb_iframe_widget {
+      background-color: white;
+    }
+
     .code-editor-container {
       max-width: 720px;
       margin: 3% auto;
@@ -515,6 +519,7 @@
       document.getElementById('test-height').addEventListener('input', build);
 
       function build(event) {
+        document.getElementById('test-container').innerHTML = '';
         embedo.load(document.getElementById('test-container'),
           document.getElementById('test-url').value, {
             width: document.getElementById('test-width').value,
