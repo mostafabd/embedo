@@ -200,41 +200,47 @@
     <div class="code-editor">
       <pre class="line-numbers">
         <code class="language-javascript">
-      /**
-       * Either import the script source
-       * OR npm install embedo --save
-       * OR bower install embedo
-       */
-      var embedo = new Embedo({
-        facebook: true,
-        twitter: true,
-        instagram: true
-      });
+  /**
+    * Either import the script source
+    * OR npm install embedo --save
+    * OR bower install embedo
+    */
+  var embedo = new Embedo({
+    facebook: true,
+    twitter: true,
+    instagram: true
+  });
 
-      // Basic embedo load call
-      embedo.load(
-        document.getElementById('my-awesome-container'),
-        'https://twitter.com/Sh0bhit/status/830448643379458048'
-      );
+  // Basic embedo load call
+  embedo.load(
+    document.getElementById('my-awesome-container'),
+    'https://twitter.com/Sh0bhit/status/830448643379458048'
+  );
 
-      // Passing custom width and height
-      embedo.load(
-        document.getElementById('my-awesome-container'),
-        'https://twitter.com/Sh0bhit/status/830448643379458048',
-        {
-          width: 640,
-          height: 480
-        }
-      );
+  // Passing custom width and height
+  embedo.load(
+    document.getElementById('my-awesome-container'),
+    'https://twitter.com/Sh0bhit/status/830448643379458048',
+    {
+      width: 640,
+      height: 480
+    }
+  );
 
-      // Load without automagic
-      embedo.load(
-        document.getElementById('my-awesome-container'),
-        'https://twitter.com/Sh0bhit/status/830448643379458048',
-        {
-          strict: true
-        }
-      );
+  // Load without automagic
+  embedo.load(
+    document.getElementById('my-awesome-container'),
+    'https://twitter.com/Sh0bhit/status/830448643379458048',
+    {
+      strict: true
+    }
+  );
+
+  // Refresh event can also be triggered
+  document.addEventListener('resize', function (event) {
+    embedo.refresh();
+  });
+  
         </code>
       </pre>
     </div>
