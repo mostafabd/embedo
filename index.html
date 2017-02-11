@@ -25,7 +25,7 @@
       height: 100%;
       width: 100%;
     }
-
+    
     body {
       color: white;
       overflow-x: hidden;
@@ -33,7 +33,7 @@
       background: -webkit-linear-gradient(135deg, #41bbbb 0%, #000000 100%);
       background: linear-gradient(135deg, #41bbbb 0%, #000000 100%);
     }
-
+    
     *,
      :after,
      :before {
@@ -47,18 +47,18 @@
       -ms-box-sizing: border-box;
       box-sizing: border-box;
     }
-
+    
     main {
       display: block;
       text-align: center;
       margin: 0 auto;
     }
-
+    
     main>h1 {
       margin: 7% 0;
       font-size: 42px;
     }
-
+    
     main>h1>p {
       font-size: 50%;
       font-weight: 500;
@@ -67,12 +67,12 @@
       margin: 15px auto;
       max-width: 540px;
     }
-
+    
     main>section {
       max-width: 750px;
       margin: 1% auto;
     }
-
+    
     main form {
       display: block;
       position: relative;
@@ -80,7 +80,7 @@
       padding: 0;
       overflow: hidden;
     }
-
+    
     main input {
       float: left;
       color: rgb(0, 0, 0);
@@ -100,35 +100,34 @@
       border-color: initial;
       border-image: initial;
     }
-
+    
     input#test-url {
       width: 60%;
       border-top-left-radius: 30px;
       border-bottom-left-radius: 30px;
       border-right: 1px solid rgba(173, 173, 173, 0.32);
     }
-
+    
     input#test-width {
       width: 20%;
       border-right: 1px solid rgba(173, 173, 173, 0.32);
     }
-
+    
     input#test-height {
       width: 20%;
       border-top-right-radius: 30px;
       border-bottom-right-radius: 30px;
     }
-
+    
     main>section>div {
       margin: 40px auto;
       text-align: center;
       max-width: 720px;
     }
-
+    
     section.samples {
       margin-top: 15%;
     }
-
   </style>
 </head>
 
@@ -176,7 +175,54 @@
   <!-- Here is how embedo.js get declared on top of your implementation -->
   <script src="../embedo.js"></script>
   <!-- Here your application or script is initialized -->
-  <script src="./script.js"></script>
+  <script>
+    window.onload = function () {
+      var embedo = new Embedo({
+        facebook: true,
+        twitter: true,
+        instagram: true
+      });
+
+      document.getElementById('test-url').addEventListener('input', build);
+      document.getElementById('test-width').addEventListener('input', build);
+      document.getElementById('test-height').addEventListener('input', build);
+
+      function build(event) {
+        embedo.load(document.getElementById('test-container'),
+          document.getElementById('test-url').value, {
+            width: document.getElementById('test-width').value,
+            height: document.getElementById('test-height').value
+          });
+      }
+
+      // Loads facebook post
+      embedo.load(
+        document.getElementById('embedo-facebook'),
+        'https://www.facebook.com/LaLiga/posts/1131604813542743', {
+          width: 600,
+          height: 400
+        }
+      );
+
+      // Loads tweet
+      embedo.load(
+        document.getElementById('embedo-twitter'),
+        'https://twitter.com/Sh0bhit/status/797584590214926340'
+      );
+
+      // Loads instagram photo
+      embedo.load(
+        document.getElementById('embedo-instagram'),
+        'https://www.instagram.com/p/BJA9BB-B46A'
+      );
+
+      // Loads youtube video
+      embedo.load(
+        document.getElementById('embedo-youtube'),
+        'https://www.youtube.com/watch?v=JGwWNGJdvx8'
+      );
+    };
+  </script>
 </body>
 
 </html>
