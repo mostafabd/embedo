@@ -200,24 +200,24 @@
     <div class="code-editor">
       <pre class="line-numbers">
         <code class="language-javascript">
-  /**
-    * Either import the script source
-    * OR npm install embedo --save
-    * OR bower install embedo
-    */
+ /**
+  * Either import the script source
+  * OR npm install embedo --save
+  * OR bower install embedo
+  */
   var embedo = new Embedo({
     facebook: true,
     twitter: true,
     instagram: true
   });
 
-  // Basic embedo load call
+  // Calling .load() event [<HTMLElement>, <url|string>, <options|object{}>]
   embedo.load(
     document.getElementById('my-awesome-container'),
     'https://twitter.com/Sh0bhit/status/830448643379458048'
   );
 
-  // Passing custom width and height
+  // Passing custom width and height as options
   embedo.load(
     document.getElementById('my-awesome-container'),
     'https://twitter.com/Sh0bhit/status/830448643379458048',
@@ -227,7 +227,7 @@
     }
   );
 
-  // Load without automagic
+  // Load without automagic which disabled auto-scaling/resizing
   embedo.load(
     document.getElementById('my-awesome-container'),
     'https://twitter.com/Sh0bhit/status/830448643379458048',
