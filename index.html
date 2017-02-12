@@ -201,11 +201,16 @@
       <pre class="line-numbers">
         <code class="language-javascript">
  /**
-  * Either import the script source
+  * Embedo Implementation Sample
+  *
+  * Download Resource from above link and import
   * OR npm install embedo --save
   * OR bower install embedo
   */
-  var embedo = new Embedo({
+  
+  import Embedo from './my/vendor/folder';
+  
+  const embedo = new Embedo({
     facebook: true,
     twitter: true,
     instagram: true
@@ -227,7 +232,7 @@
     }
   );
 
-  // Load without automagic which disabled auto-scaling/resizing
+  // Load without automagic (disables auto-resizing and scaling translations)
   embedo.load(
     document.getElementById('my-awesome-container'),
     'https://twitter.com/Sh0bhit/status/830544109857275906',
