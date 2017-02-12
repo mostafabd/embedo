@@ -5,7 +5,7 @@
   <base href="/">
   <meta charset="utf-8">
   <title>embedo - Social Media Embed Plugin</title>
-  <meta name="description" content="A simple, fast, lightweight and automagical social media content embedder plugin for web">
+  <meta name="description" content="A simple, fast, lightweight and standalone social media content embedder plugin for web">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/ico" href="https://github.com/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
@@ -216,7 +216,7 @@
 <body>
   <div id="embedoxy">
     <h1>embedo
-      <p>A simple, fast, lightweight and automagical social media content embedder plugin for web</p>
+      <p>A simple, fast, lightweight and standalone social media content embedder plugin for web</p>
       <div class="buttons">
         <!-- Star Badge. -->
         <a class="github-button" href="https://github.com/shobhitsharma/embedo" data-icon="octicon-star" data-style="mega" data-count-href="/shobhitsharma/embedo/stargazers"
@@ -251,9 +251,9 @@
   import Embedo from './my/vendor/folder';
   
   const embedo = new Embedo({
-    facebook: true,
-    twitter: true,
-    instagram: true
+    facebook: true, // Injects facebook oembed sdk to body
+    twitter: true,  // Injects twitter oembed sdk to body
+    instagram: true  // Injects instagram oembed sdk to body
   });
 
   // Calling .load() event [HTMLElement, url|string, options|object{}]
