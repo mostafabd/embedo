@@ -285,7 +285,13 @@
   document.addEventListener('resize', function (event) {
     embedo.refresh();
   });
-  
+
+  // DOM Watch Event
+  document.getElementById('my-awesome-container').addEventListener('watch',
+    function (event) {
+      // Event log .detail contains updated element width and height
+      console.log(event, event.detail);
+    });
         </code>
       </pre>
     </div>
