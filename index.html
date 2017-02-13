@@ -31,9 +31,9 @@
     body {
       color: white;
       overflow-x: hidden;
-      background: #43c6ca;
-      background: -webkit-radial-gradient(ellipse farthest-corner at center top, #224a56, #43c6ca);
-      background: radial-gradient(ellipse farthest-corner at center top, #224a56, #43c6ca);
+      background: #2EB5E5;
+      background: -webkit-radial-gradient(ellipse farthest-corner at center top, #224a56, #2EB5E5);
+      background: radial-gradient(ellipse farthest-corner at center top, #224a56, #2EB5E5);
       -webkit-overflow-scrolling: touch;
     }
     
@@ -67,7 +67,7 @@
     }
     
     div#embedoxy>h1 {
-      margin: 7% 0;
+      margin: 7% 0 3% 0;
       font-size: 42px;
     }
     
@@ -114,12 +114,12 @@
       border-radius: 0;
       -webkit-border-radius: 0;
     }
-
+    
     .buttons {
       position: relative;
     }
-
-    .buttons > a {
+    
+    .buttons>a {
       position: fixed;
       left: -999999px;
       color: #000;
@@ -129,9 +129,9 @@
       height: 26px;
       line-height: 26px;
       background-color: #eee;
-      background-image: -webkit-linear-gradient(top,#fcfcfc,#eee);
-      background-image: -moz-linear-gradient(top,#fcfcfc,#eee);
-      background-image: linear-gradient(to bottom,#fcfcfc,#eee);
+      background-image: -webkit-linear-gradient(top, #fcfcfc, #eee);
+      background-image: -moz-linear-gradient(top, #fcfcfc, #eee);
+      background-image: linear-gradient(to bottom, #fcfcfc, #eee);
       -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#eeeeee')";
     }
     
@@ -163,47 +163,519 @@
       text-align: left;
     }
 
+    #test-container {
+      position: relative;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
     .fb-post.fb_iframe_widget {
       background-color: white;
     }
-
+    
     .code-editor-container {
+      position: relative;
       max-width: 720px;
       margin: 3% auto;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      overflow: hidden;
     }
-
+    
+    .code-editor-container>header {
+      position: relative;
+      top: 10px;
+      display: flex;
+      background: Gainsboro;
+      color: #999;
+      font-weight: 600;
+      height: 30px;
+      line-height: 30px;
+      justify-content: center;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    
+    .code-editor-container>header .action-buttons {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      margin-top: -5px;
+      width: 10px;
+      height: 10px;
+      background: Crimson;
+      border-radius: 50%;
+      box-shadow: 15px 0 0 orange, 30px 0 0 limegreen;
+    }
+    
+    .code-editor-container>header h2 {
+      font-size: 14px;
+    }
+    
+    .code-editor-container>header .packages {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+    }
+    
+    pre[class*=language-] {
+      margin: 0 auto;
+    }
+    
     pre.line-numbers.language-javascript {
       background: rgba(23, 23, 23, 0.65);
     }
-
+    
     footer {
       position: relative;
       text-align: center;
+      font-weight: 500;
+      font-size: 12px;
+      margin: 40px auto;
+      color: rgba(255, 255, 255, 0.61);
     }
-
-    footer p {
-      text-align: center;
-      margin-bottom: 100px;
-      height: 40px;
-      line-height: 40px;
-      font-weight: 600;
-    }
-
-    footer p > a {
+    
+    footer div span>iframe {
       position: relative;
       top: 5px;
+      margin-left: 5px;
     }
-
+    
+    footer div {
+      height: 50px;
+      line-height: 50px;
+    }
+    
+    footer div span {
+      padding: 0 10px;
+    }
+    
+    footer div span:not(:last-child):after {
+      content: "•";
+      position: relative;
+      right: -10px;
+    }
+    
+    section#action-hero {
+      position: fixed;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+    
+    body #superman {
+      background: #33608e;
+      width: 150px;
+      height: 150px;
+      border-radius: 100px 100px 100px 100px / 50px 100px 90px 150px;
+      position: relative;
+      -webkit-animation: flying 5s ease-in-out infinite;
+      animation: flying 5s ease-in-out infinite;
+      z-index: 2;
+    }
+    
+    @-webkit-keyframes flying {
+      0% {
+        -webkit-transform: translateX(0) scale(0.5);
+        transform: translateX(0) scale(0.5);
+      }
+      20% {
+        -webkit-transform: translateX(100px) scale(0.65);
+        transform: translateX(100px) scale(0.65);
+      }
+      60% {
+        -webkit-transform: translateX(-50px) scale(0.6);
+        transform: translateX(-50px) scale(0.6);
+      }
+      80% {
+        -webkit-transform: translateX(50px) scale(0.65);
+        transform: translateX(50px) scale(0.65);
+      }
+      100% {
+        -webkit-transform: translateX(0) scale(0.5);
+        transform: translateX(0) scale(0.5);
+      }
+    }
+    
+    @keyframes flying {
+      0% {
+        -webkit-transform: translateX(0) scale(0.5);
+        transform: translateX(0) scale(0.5);
+      }
+      20% {
+        -webkit-transform: translateX(100px) scale(0.65);
+        transform: translateX(100px) scale(0.65);
+      }
+      60% {
+        -webkit-transform: translateX(-50px) scale(0.6);
+        transform: translateX(-50px) scale(0.6);
+      }
+      80% {
+        -webkit-transform: translateX(50px) scale(0.65);
+        transform: translateX(50px) scale(0.65);
+      }
+      100% {
+        -webkit-transform: translateX(0) scale(0.5);
+        transform: translateX(0) scale(0.5);
+      }
+    }
+    
+    body #superman .cape {
+      width: 350px;
+      height: 150px;
+      position: absolute;
+      left: -310px;
+      top: -25px;
+      z-index: -1;
+      -webkit-transform-origin: 100% 50%;
+      transform-origin: 100% 50%;
+      -webkit-animation: flapping 0.1s linear infinite alternate;
+      animation: flapping 0.1s linear infinite alternate;
+    }
+    
+    @-webkit-keyframes flapping {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+      }
+    }
+    
+    @keyframes flapping {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+      }
+    }
+    
+    body #superman .cape .inner {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 20%;
+      height: 50%;
+      background: #c43720;
+      border-radius: 0 0 150% 0 / 0 0 50% 0;
+      -webkit-animation: waving 0.5s linear infinite alternate;
+      animation: waving 0.5s linear infinite alternate;
+      -webkit-transform-origin: 100% 50%;
+      transform-origin: 100% 50%;
+    }
+    
+    @-webkit-keyframes waving {
+      0% {
+        border-radius: 0 0 150% 0 / 0 0 50% 0;
+        -webkit-transform: scaleX(1.1) skewX(-10deg);
+        transform: scaleX(1.1) skewX(-10deg);
+      }
+      100% {
+        border-radius: 0 0 150% 0 / 0 0 80% 0;
+        -webkit-transform: scaleX(1.2);
+        transform: scaleX(1.2);
+      }
+    }
+    
+    @keyframes waving {
+      0% {
+        border-radius: 0 0 150% 0 / 0 0 50% 0;
+        -webkit-transform: scaleX(1.1) skewX(-10deg);
+        transform: scaleX(1.1) skewX(-10deg);
+      }
+      100% {
+        border-radius: 0 0 150% 0 / 0 0 80% 0;
+        -webkit-transform: scaleX(1.2);
+        transform: scaleX(1.2);
+      }
+    }
+    
+    body #superman .cape:before {
+      content: '';
+      position: absolute;
+      width: 30%;
+      height: 70%;
+      background: #c43720;
+      right: 20%;
+      border-radius: 0 0 150% 0 / 0 0 50% 0;
+      -webkit-animation: waving 0.5s ease-in-out infinite alternate;
+      animation: waving 0.5s ease-in-out infinite alternate;
+      -webkit-transform-origin: 100% 50%;
+      transform-origin: 100% 50%;
+    }
+    
+    body #superman .cape:after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background: #c43720;
+      right: 50%;
+      border-radius: 0 0 150% 0 / 0 0 50% 0;
+      -webkit-animation: waving 0.5s ease-in-out infinite alternate;
+      animation: waving 0.5s ease-in-out infinite alternate;
+      -webkit-transform-origin: 100% 50%;
+      transform-origin: 100% 50%;
+    }
+    
+    body #superman .shoe {
+      width: 80px;
+      height: 50px;
+      position: absolute;
+      bottom: -270px;
+      overflow: hidden;
+      left: 122.5px;
+      -webkit-transform: rotate(30deg);
+      transform: rotate(30deg);
+    }
+    
+    body #superman .shoe.rear {
+      -webkit-transform: none;
+      transform: none;
+      left: -190px;
+      bottom: -225px;
+      -webkit-transform: rotate(100deg);
+      transform: rotate(100deg);
+    }
+    
+    body #superman .shoe:before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 30px 0 0 100px;
+      border-color: transparent transparent transparent #c43720;
+    }
+    
+    body #superman .head {
+      z-index: 4;
+      top: -80px;
+      left: 100px;
+      width: 70px;
+      height: 80px;
+      background: #ecc9a5;
+      position: absolute;
+      border-radius: 0 0 0% 100% / 0 0 0% 120%;
+      box-shadow: -15px -15px 0 #000;
+    }
+    
+    body #superman .head:before {
+      content: '';
+      position: absolute;
+      width: 90px;
+      height: 30px;
+      top: -20px;
+      background: #000;
+      border-radius: 0 0 150% 0 / 0 0 100% 0;
+    }
+    
+    body #superman:before {
+      content: '';
+      background: #33608e;
+      width: 80px;
+      height: 100px;
+      position: absolute;
+      right: 0;
+      top: 0px;
+      -webkit-transform: rotate(-40deg);
+      transform: rotate(-40deg);
+      border-radius: 10px;
+    }
+    
+    body #superman .arm {
+      width: 230px;
+      height: 175px;
+      position: absolute;
+      border-radius: 100%;
+      z-index: 2;
+      box-shadow: inset 50px -60px 0 -20px #3a6da1;
+      top: -18px;
+      left: 20px;
+    }
+    
+    body #superman .arm:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 100px;
+      border-radius: 100%;
+      background: #3a6da1;
+      left: -25px;
+      top: 20px;
+    }
+    
+    body #superman .arm:before {
+      content: '';
+      position: absolute;
+      border-bottom: 40px solid #ecc9a5;
+      border-left: 0px solid transparent;
+      border-right: 8px solid transparent;
+      height: 0;
+      width: 29px;
+      top: 122.5px;
+      left: 180px;
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+    }
+    
+    body #superman .neck {
+      position: absolute;
+      border-bottom: 60px solid #e8bc90;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      height: 0;
+      width: 50px;
+      -webkit-transform: rotate(30deg) skewX(-20deg);
+      transform: rotate(30deg) skewX(-20deg);
+      top: -50px;
+      left: 70px;
+      z-index: 1;
+    }
+    
+    body #superman .collar {
+      position: absolute;
+      top: -10px;
+      left: 12.5px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 70px 100px 0 0;
+      border-color: #c43720 transparent transparent transparent;
+      z-index: -1;
+      -webkit-transform: rotate(30deg);
+      transform: rotate(30deg);
+    }
+    
+    body #superman .pants {
+      position: absolute;
+      bottom: -80px;
+      width: 0;
+      left: 5px;
+      height: 0;
+      border-style: solid;
+      -webkit-transform: rotate(-75deg);
+      transform: rotate(-75deg);
+      border-width: 25px 0 60px 85px;
+      border-color: transparent transparent transparent #c43720;
+      border-radius: 100% 0 0 0;
+    }
+    
+    body #superman .belt {
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      background: #ffc408;
+      width: 90px;
+      height: 20px;
+      left: 20px;
+      -webkit-transform: rotate(15deg);
+      transform: rotate(15deg);
+    }
+    
+    body #superman .belt:before {
+      content: '';
+      position: absolute;
+      width: 85px;
+      height: 85px;
+      background: #3a6da1;
+      border-radius: 100%;
+      top: 20px;
+      left: 40px;
+    }
+    
+    body #superman .leg {
+      position: absolute;
+      width: 0;
+      height: 0;
+      width: 160px;
+      height: 80px;
+      bottom: -150px;
+      left: 70px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      overflow: hidden;
+    }
+    
+    body #superman .leg.three {
+      bottom: auto;
+      z-index: -1;
+      -webkit-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+      top: -40px;
+      left: 130px;
+      box-shadow: 55px -25px 0 -25px #ecc9a5;
+    }
+    
+    body #superman .leg.three:after {
+      border-width: 75px 220px 0 0;
+      border-color: #2f5983 transparent transparent transparent;
+    }
+    
+    body #superman .leg.two {
+      -webkit-transform: rotate(140deg) scale(0.65);
+      transform: rotate(140deg) scale(0.65);
+      bottom: -200px;
+      left: 90px;
+    }
+    
+    body #superman .leg.back {
+      -webkit-transform: rotate(140deg);
+      transform: rotate(140deg);
+      left: -80px;
+      z-index: -1;
+    }
+    
+    body #superman .leg.back.two {
+      left: -160px;
+      -webkit-transform: rotate(190deg) scale(0.6);
+      transform: rotate(190deg) scale(0.6);
+    }
+    
+    body #superman .leg.back:after {
+      border-style: solid;
+      border-width: 85px 200px 0 0;
+      border-color: #33608e transparent transparent transparent;
+    }
+    
+    body #superman .leg:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-style: solid;
+      border-width: 85px 200px 0 0;
+      border-color: #3a6da1 transparent transparent transparent;
+    }
+    
+    body #superman .leg:before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 85px;
+      background: #3a6da1;
+      top: 0px;
+      left: -38.5px;
+      border-radius: 300% 0 0 300% / 150% 0 0 150%;
+    }
+    
     @media screen and (min-width: 0px) and (max-width: 480px) {
+      section#action-hero {
+        display: none;
+      }
       div#embedoxy {
         padding: 25px;
       }
-
       div#embedoxy form>input {
         font-size: 11px;
         padding: 15px 10px;
       }
-
       .code-editor-container {
         max-width: 320px;
         font-size: 11px;
@@ -220,7 +692,7 @@
       <div class="buttons">
         <!-- Star Badge. -->
         <a class="github-button" href="https://github.com/shobhitsharma/embedo" data-icon="octicon-star" data-style="mega" data-count-href="/shobhitsharma/embedo/stargazers"
-          data-count-api="/repos/shobhitsharma/embedo#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star shobhitsharma/embedo on GitHub">Star</a>
+          data-count-aria-label="# stargazers on GitHub" aria-label="Star shobhitsharma/embedo on GitHub">Star</a>
         <!-- Downlaod Badge. -->
         <a class="github-button" href="https://github.com/shobhitsharma/embedo/archive/master.zip" data-icon="octicon-cloud-download"
           data-style="mega" aria-label="Download shobhitsharma/embedo on GitHub">Download</a>
@@ -236,14 +708,25 @@
     </section>
   </div>
   <section class="code-editor-container">
-    <h2>JS Implementation:</h2>
+    <header>
+      <div class="action-buttons"></div>
+      <h2>embedo.js</h2>
+      <div class="packages">
+        <span>
+          <a href="https://badge.fury.io/bo/embedo"><img src="https://badge.fury.io/bo/embedo@2x.png" alt="Bower version" height="18"></a>
+        </span>
+        <span>
+          <a href="https://badge.fury.io/js/embedo"><img src="https://badge.fury.io/js/embedo@2x.png" alt="npm version" height="18"></a>
+        </span>
+      </div>
+    </header>
     <div class="code-editor">
       <pre class="line-numbers">
         <code class="language-javascript">
  /**
   * @example Embedo Implementation Sample
   *
-  * @import https://cdn.rawgit.com/shobhitsharma/embedo/v0.2.2/embedo.min.js
+  * @import https://cdn.jsdelivr.net/embedo/0.2.2/embedo.min.js
   * @package npm install embedo --save
   * @package bower install embedo
   */
@@ -297,9 +780,36 @@
       </pre>
     </div>
   </section>
-  <footer style="text-align: center;  margin-bottom: 100px;">
-    <p>MIT Licensed • Found on <a href="https://badge.fury.io/js/embedo"><img src="https://badge.fury.io/js/embedo@2x.png" alt="npm version" height="18"></a></p>
+  <footer>
+    <div>
+      <span>MIT Licensed</span>
+      <span>
+        Open Sourced on github
+        <a class="github-button" href="https://github.com/shobhitsharma/embedo/issues" data-icon="octicon-issue-opened" aria-label="Issue shobhitsharma/embedo on GitHub">Issue</a>
+        <a class="github-button" href="https://github.com/shobhitsharma/embedo/fork" data-icon="octicon-repo-forked" aria-label="Fork shobhitsharma/embedo on GitHub">Fork</a>
+      </span>
+    </div>
   </footer>
+  <section id="action-hero">
+    <div id='superman'>
+      <div class='cape'>
+        <div class='inner'></div>
+      </div>
+      <div class='head'></div>
+      <div class='arm'></div>
+      <div class='neck'></div>
+      <div class='collar'></div>
+      <div class='pants'></div>
+      <div class='belt'></div>
+      <div class='leg'></div>
+      <div class='leg three'></div>
+      <div class='leg two'></div>
+      <div class='leg back'></div>
+      <div class='leg back two'></div>
+      <div class='shoe'></div>
+      <div class='shoe rear'></div>
+    </div>
+  </section>
   </main>
   <!--[if lt IE 7]>
   <script src="https://seancoyne.github.io/ie7-js/lib/IE7.js"></script>
@@ -313,22 +823,28 @@
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-80234662-2', 'auto');
     ga('send', 'pageview');
-
   </script>
   <!-- Here is how embedo.js get declared on top of your implementation -->
-  <script src="https://cdn.rawgit.com/shobhitsharma/embedo/v0.2.2/embedo.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/embedo/0.2.2/embedo.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
   <!-- Here your application or script is initialized -->
   <script>
     window.onload = function () {
-      
+
       var embedo = new Embedo({
         facebook: true,
         twitter: true,
@@ -347,15 +863,26 @@
         if (timer) {
           clearTimeout(timer);
         }
-        
+
         document.getElementById('test-container').innerHTML = '';
 
-        timer = setTimeout(function(){
+        timer = setTimeout(function () {
+          var width = parseInt(document.getElementById('test-width').value) || null;
+          var height = parseInt(document.getElementById('test-height').value) || null;
+
+          if (width > 0) {
+            document.getElementById('test-container').style.width = width;
+          }
+
+          if (width > 0) {
+            document.getElementById('test-container').style.height = height;
+          }
+          
           embedo.load(document.getElementById('test-container'),
-          document.getElementById('test-url').value, {
-            width: parseInt(document.getElementById('test-width').value) || null,
-            height: parseInt(document.getElementById('test-height').value) || null
-          });
+            document.getElementById('test-url').value, {
+              width: width,
+              height: height
+            });
         }, timeout);
       }
     };
