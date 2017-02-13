@@ -162,7 +162,7 @@
     section.readme {
       text-align: left;
     }
-
+    
     #test-container {
       position: relative;
       margin: 0 auto;
@@ -692,7 +692,7 @@
       <div class="buttons">
         <!-- Star Badge. -->
         <a class="github-button" href="https://github.com/shobhitsharma/embedo" data-icon="octicon-star" data-style="mega" data-count-href="/shobhitsharma/embedo/stargazers"
-          data-count-aria-label="# stargazers on GitHub" aria-label="Star shobhitsharma/embedo on GitHub">Star</a>
+          data-count-api="/repos/shobhitsharma/embedo#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star shobhitsharma/embedo on GitHub">Star</a>
         <!-- Downlaod Badge. -->
         <a class="github-button" href="https://github.com/shobhitsharma/embedo/archive/master.zip" data-icon="octicon-cloud-download"
           data-style="mega" aria-label="Download shobhitsharma/embedo on GitHub">Download</a>
@@ -877,7 +877,7 @@
           if (width > 0) {
             document.getElementById('test-container').style.height = height;
           }
-          
+
           embedo.load(document.getElementById('test-container'),
             document.getElementById('test-url').value, {
               width: width,
