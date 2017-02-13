@@ -1,0 +1,10 @@
+# Site settings
+title: embedo
+email: hi@shoh.it
+description: > # this means to ignore newlines until "baseurl:"
+  Plugin to embed third party social media content like facebook, twitter, instagram, etc.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://shobhitsharma.github.io/embedo"
+
+gems:
+  - jekyll-redirect-from
