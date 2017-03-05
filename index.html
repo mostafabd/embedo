@@ -785,15 +785,11 @@
     }
   );
 
-  // Refresh event can also be triggered
-  document.addEventListener('resize', function (event) {
-    embedo.refresh(document.getElementById('my-awesome-container')); // or () for all
-  });
+  // Refresh event (if no element passed, refreshes all embedo instances)
+  embedo.refresh(document.getElementById('my-awesome-container'));
 
-  // Refresh event can also be triggered
-  document.addEventListener('resize', function (event) {
-    embedo.destroy(document.getElementById('my-awesome-container')); // or () for all
-  });
+  // Destroy event (if no element passed, destroys all embedo instances)
+  embedo.destroy(document.getElementById('my-awesome-container'));
 
   // DOM Watch Event
   document.getElementById('my-awesome-container').addEventListener('watch',
