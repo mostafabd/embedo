@@ -742,7 +742,7 @@
  /**
   * @example Embedo Implementation Sample
   *
-  * @import https://cdn.jsdelivr.net/embedo/0.2.2/embedo.min.js
+  * @import https://cdn.jsdelivr.net/embedo/0.3.0/embedo.min.js
   * @package npm install embedo --save
   * @package bower install embedo
   */
@@ -750,7 +750,10 @@
   import Embedo from './my/vendor/folder';
   
   const embedo = new Embedo({
-    facebook: true, // Enable facebook SDK
+    facebook: {
+      appId: 'my_app_id',
+      version: 'v2.8'
+    }, // Enable facebook SDK
     twitter: true,  // Enable twitter SDK
     instagram: true,  // Enable instagram SDK
     pinterest: true  // Enable pinterest SDK
@@ -777,13 +780,19 @@
     document.getElementById('my-awesome-container'),
     'https://www.instagram.com/p/BQZV5JZllrH/',
     {
-      strict: true
+      strict: true,
+      omitscript: true
     }
   );
 
   // Refresh event can also be triggered
   document.addEventListener('resize', function (event) {
-    embedo.refresh();
+    embedo.refresh(document.getElementById('my-awesome-container')); // or () for all
+  });
+
+  // Refresh event can also be triggered
+  document.addEventListener('resize', function (event) {
+    embedo.destroy(document.getElementById('my-awesome-container')); // or () for all
   });
 
   // DOM Watch Event
@@ -855,7 +864,7 @@
     ga('send', 'pageview');
   </script>
   <!-- Here is how embedo.js get declared on top of your implementation -->
-  <script src="https://cdn.jsdelivr.net/embedo/0.2.2/embedo.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/embedo/0.3.0/embedo.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
   <!-- Here your application or script is initialized -->
   <script>
