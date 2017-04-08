@@ -898,7 +898,7 @@
     'https://twitter.com/Sh0bhit/status/830544109857275906'
   );
 
-  // Passing custom width and height as options
+  // Passing custom options
   embedo.load(
     document.getElementById('my-awesome-container'),
     'https://www.youtube.com/watch?v=5Ad3TH8XGSI',
@@ -908,15 +908,8 @@
     }
   );
 
-  // Load without automagic (disables auto-resizing and scaling translations)
-  embedo.load(
-    document.getElementById('my-awesome-container'),
-    'https://www.instagram.com/p/BQZV5JZllrH/',
-    {
-      strict: true,
-      omitscript: true
-    }
-  );
+  // Also, the jQuery way
+  embedo.load($('my-awesome-container').get(0), 'my://url');
 
   // Refresh event (if no element passed, refreshes all embedo instances)
   embedo.refresh(document.getElementById('my-awesome-container'));
@@ -934,14 +927,14 @@
     console.log(request, result); // Returns request meta and dimensions
   });
 
-  // Error Handler
-  embedo.on('error', function (error) {
-    console.error(error); // Emits in case of invalid request or an exception
-  });
-
   // Destroy Event
   embedo.on('destroy', function () {
     // Do something when embedo destroys
+  });
+
+  // Catch errors during embed, if/any.
+  embedo.on('error', function (error) {
+    console.error(error); // Emits in case of invalid request or an exception
   });
         </code>
       </pre>
@@ -951,9 +944,10 @@
       <div>
         <span>MIT Licensed</span>
         <span>
-        Open Sourced on github
+        Source on Github
         <a class="github-button" href="https://github.com/shobhitsharma/embedo/issues" data-icon="octicon-issue-opened" aria-label="Issue shobhitsharma/embedo on GitHub">Issue</a>
         <a class="github-button" href="https://github.com/shobhitsharma/embedo/fork" data-icon="octicon-repo-forked" aria-label="Fork shobhitsharma/embedo on GitHub">Fork</a>
+        <a class="github-button" href="https://github.com/shobhitsharma/embedo/subscription" data-icon="octicon-eye" aria-label="Watch shobhitsharma/embedo on GitHub">Watch</a>
       </span>
       </div>
     </footer>
@@ -1007,7 +1001,7 @@
     ga('send', 'pageview');
   </script>
   <!-- Here is how embedo.js get declared on top of your implementation -->
-  <script src="https://cdn.jsdelivr.net/embedo/0.4.0/embedo.min.js"></script>
+  <script src="https://unpkg.com/embedo@0.5.0/embedo.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
   <!-- Here your application or script is initialized -->
   <script>
